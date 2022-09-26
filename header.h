@@ -300,6 +300,7 @@ void Tutorial()
         }
         if(tpAtivo == true && cont >= 4) //Somente usado no tutoral. Texto aparece após o teleporte ser ativo
         {
+            cout << "Dica: As vezes, interagir com objetos como portas e portoes, mesmo sem ter a chave, pode ativar eventos importantes" << endl;
             cout << "O teleporte > esta ativo, tente usa-lo. Interaja com a porta H para completar o tutorial" << endl;
             cout << "Interagir (WASDI): ";
         }
