@@ -94,7 +94,7 @@ void MenuPrincipal()
 
         else if(escolha == '2') //Se a escolha for 2, o jogador vai direto para a fase 1, pulando o tutorial
         {
-            Fase2();
+            Fase3();
         }
 
         else if(escolha == '3') //Se a escolha for 3, o jogador volta para o menu
@@ -1036,7 +1036,7 @@ void Fase2()
                 Fase3();
             }
 
-            if(mapa[jogador.posicao.l][jogador.posicao.c+1] == mapa[portaF.posicao.l][portaF.posicao.c] && portaoLevantado == false)
+            if(mapa[jogador.posicao.l][jogador.posicao.c+1] == mapa[portaF.posicao.l][portaF.posicao.c] && portaoLevantado == false) //O portão levanta quando o jogador interage com a porta trancada
             {
                 portaoLevantado = true;
                 portaAberta = false;
@@ -1088,39 +1088,39 @@ void Fase3()
     string espinho = "#";
 
     //Posição e icone dos teleportes
-    tp.posicao.l = 5;
-    tp.posicao.c = 18;
-    tp2.posicao.l = 17;
-    tp2.posicao.c = 21;
+    tp.posicao.l = 9;
+    tp.posicao.c = 35;
+    tp2.posicao.l = 69;
+    tp2.posicao.c = 38;
     tp.tp = ">";
     tp2.tp = "<";
 
     //Posição e icone do botão
-    botao.posicao.l = 8;
-    botao.posicao.c = 11;
+    botao.posicao.l = 72;
+    botao.posicao.c = 67;
     botao.botao = "O";
 
     //Posição e icone da porta
-    portaF.posicao.l = 5;
-    portaF.posicao.c = 14;
+    portaF.posicao.l = 68;
+    portaF.posicao.c = 67;
     portaF.porta = "D";
 
     //Posição e icone da porta final
-    portaFinal.posicao.l = 10;
-    portaFinal.posicao.c = 12;
+    portaFinal.posicao.l = 72;
+    portaFinal.posicao.c = 38;
     portaFinal.portaFinal = "X";
 
     //Posição e icone da chave
-    chave.posicao.l = 6;
-    chave.posicao.c = 6;
+    chave.posicao.l = 3;
+    chave.posicao.c = 64;
     chave.chave = "@";
     
     //Posição e icone do jogador
     jogador.jogador = "&";
-    jogador.posicao.l = 11;
-    jogador.posicao.c = 12;
-    int posOriginalx = 11; //Guarda a posição inicial X do jogador. É usada para redefinir a sua posição quando morre
-    int posOriginaly = 12; //Guarda a posição inicial Y do jogador. É usada para redefinir a sua posição quando morre
+    jogador.posicao.l = 38;
+    jogador.posicao.c = 2;
+    int posOriginalx = 38; //Guarda a posição inicial X do jogador. É usada para redefinir a sua posição quando morre
+    int posOriginaly = 2; //Guarda a posição inicial Y do jogador. É usada para redefinir a sua posição quando morre
     jogador.vidas = 3; //Variavel que armazena a quantidade de vidas do jogador
 
     //Variaveis que são usadas para armazenar se algo foi usado. Sempre iniciam falso
@@ -1158,9 +1158,111 @@ void Fase3()
         mapa[portaFinal.posicao.l][portaFinal.posicao.c] = portaFinal.portaFinal;
 
         //Define a localização dos objetos no mapa
+        //Sala inicial
+        for(int i = 6; i <= 15; i++)
+        {
+            mapa[28][i] = "*";
+        }
+        for(int i = 1; i <= 15; i++)
+        {
+            mapa[48][i] = "*";
+        }
+        for(int i = 6; i <= 28; i++)
+        {
+            mapa[i][6] = "*";
+        }
+        for(int i = 6; i <= 30; i++)
+        {
+            mapa[6][i] = "*";
+        }
+        for(int i = 6; i <= 14; i++)
+        {
+            mapa[i][30] = "*";
+        }
+        for(int i = 30; i <= 40; i++)
+        {
+            mapa[14][i] = "*";
+        }
+        for(int i = 1; i <= 14; i++)
+        {
+            mapa[i][40] = "*";
+        }
+        for(int i = 28; i <= 35; i++)
+        {
+            mapa[i][15] = "*";
+        }
+        for(int i = 41; i <= 48; i++)
+        {
+            mapa[i][15] = "*";
+        }
+        for(int i = 15; i <= 35; i++)
+        {
+            mapa[35][i] = "*";
+        }
+        for(int i = 15; i <= 64; i++)
+        {
+            mapa[41][i] = "*";
+        }
+        for(int i = 41; i <= 73; i++)
+        {
+            mapa[i][64] = "*";
+        }
+        for(int i = 35; i >= 20; i--)
+        {
+            mapa[i][35] = "*";
+        }
+        for(int i = 1; i <= 14; i++)
+        {
+            mapa[i][54] = "*";
+        }
+        for(int i = 54; i <= 68; i++)
+        {
+            mapa[14][i] = "*";
+        }
+        for(int i = 14; i <= 20; i++)
+        {
+            mapa[i][68] = "*";
+        }
+        for(int i = 35; i <= 68; i++)
+        {
+            mapa[20][i] = "*";
+        }
+        for(int i = 41; i <= 73; i++)
+        {
+            mapa[26][i] = "*";
+        }
+        for(int i = 26; i <= 35; i++)
+        {
+            mapa[i][41] = "*";
+        }
+        for(int i = 41; i <= 70; i++)
+        {
+            mapa[35][i] = "*";
+        }
+        for(int i = 35; i <= 73; i++)
+        {
+            mapa[i][70] = "*";
+        }
+        for(int i = 28; i <= 48; i++)
+        {
+            mapa[68][i] = "*";
+        }
+        for(int i = 73; i >= 68; i--)
+        {
+            mapa[i][28] = "*";
+        }
+        for(int i = 73; i >= 68; i--)
+        {
+            mapa[i][48] = "*";
+        }
+        for(int i = 65; i <= 69; i++)
+        {
+            mapa[68][i] = "*";
+        }
+
         if(comChave == false) //Se o jogador obter a chave, ela desaparece do chão
         {
-            mapa[chave.posicao.l][chave.posicao.l] = chave.chave;
+            mapa[chave.posicao.l][chave.posicao.c] = chave.chave;
         }
         else
         {
@@ -1175,6 +1277,7 @@ void Fase3()
         if(portaAberta == false)
         {
             mapa[portaF.posicao.l][portaF.posicao.c] = portaF.porta; //Se a porta estiver trancada ela se mantem com o icone D (Porta fechada)
+            comChave = false;
         }
         else
         {
