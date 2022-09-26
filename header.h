@@ -757,7 +757,7 @@ void Fase2()
     bool comChave = false;
     bool portaAberta = false;
     bool botaoAtivo = false;
-    bool portaoAberto = false;
+    bool portaoLevantado = false;
     
     char interagir; //Variavel responsável por armazenar as interações do jogador com o mapa (Movimentação e utilização dos objetos)
 
@@ -901,7 +901,7 @@ void Fase2()
         {
             mapa[i][34] = "*";
         }
-        if(portaoAberto == false)
+        if(portaoLevantado == false) //Se o jogador interagir com a porta fechada, sem a chave, os portões se abrem
         {
             for(int i = 31; i <= 33; i++)
             {
@@ -1036,9 +1036,10 @@ void Fase2()
                 Fase3();
             }
 
-            if(mapa[jogador.posicao.l][jogador.posicao.c+1] == mapa[portaF.posicao.l][portaF.posicao.c] && portaoAberto == false && comChave == false)
+            if(mapa[jogador.posicao.l][jogador.posicao.c+1] == mapa[portaF.posicao.l][portaF.posicao.c] && portaoLevantado == false)
             {
-                portaoAberto = true;
+                portaoLevantado = true;
+                portaAberta = false;
             }
         }
 
