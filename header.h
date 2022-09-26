@@ -1259,6 +1259,38 @@ void Fase3()
         {
             mapa[68][i] = "*";
         }
+        for(int i = 29; i <= 47; i++)
+        {
+            mapa[69][i] = espinho;
+        }
+        for(int i = 73; i >= 69; i--)
+        {
+            mapa[i][29] = espinho;
+        }
+        for(int i = 73; i >= 69; i--)
+        {
+            mapa[i][47] = espinho;
+        }
+
+        for(int i = 27; i <= 49; i++)
+        {
+            mapa[67][i] = espinho;
+        }
+        for(int i = 73; i >= 68; i--)
+        {
+            mapa[i][27] = espinho;
+        }
+        for(int i = 73; i >= 68; i--)
+        {
+            mapa[i][49] = espinho;
+        }
+        for(int i = 29; i <= 31; i++)
+        {
+            for(int j = 11; j <= 14; j++)
+            {
+                mapa[i][j] = espinho;
+            }
+        }
 
         if(comChave == false) //Se o jogador obter a chave, ela desaparece do chão
         {
@@ -1387,8 +1419,8 @@ void Fase3()
             if(mapa[jogador.posicao.l][jogador.posicao.c] == mapa[portaFinal.posicao.l][portaFinal.posicao.c])
             {
                 system("clear || cls");
-                cout << "tela de vitoria provisoria" << endl;
-                cout << "digite qualquer tecla para voltar para o menu: ";
+                cout << "Parabens! Voce venceu" << endl;
+                cout << "Pressione qualquer tecla para voltar para o menu: ";
                 cin >> lixo;
                 MenuPrincipal();
             }
